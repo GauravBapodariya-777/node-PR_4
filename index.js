@@ -7,7 +7,7 @@ const path = require('path')
 
 app.use(express.urlencoded());
 app.set('view engine','ejs');
-app.set(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',(req,res)=>{
     adminTable.find({}).then((record)=>{
