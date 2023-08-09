@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <form method="post" action="/insertData">
+        <table border="1">
+            <tr>
+                <td>book_name :- </td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>book_price :- </td>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>book_author :- </td>
+                <td><input type="text" name="author"></td>
+            </tr>
+            <tr>
+               <td>book_pages</td>
+               <td>
+                    <select name="page">
+                        <option value="">----select page-----</option>
+                        <% 
+                            let page = ["0-100","100-200","200-300","300-400","400-500","500-600"];
+                            page.map((val)=>{   
+                        %>  
+                          <option><%= val %></option>          
+                        <%  }) %>
+                    </select>
+               </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table><br><br><br>
+    
+        <table border="1">
+            <tr>
+                <td>book_name</td>
+                <td>book_price</td>
+                <td>book_author</td>
+                <td>book_pages</td>
+                <td>Action</td>
+            </tr>
+    
+            <% record.map((val)=>{ 
+                    const {name,price,author,gender,hobby,page,phone} = val
+                %>
+                <tr>
+                    <td><%= name %></td>
+                    <td><%= price %></td>
+                    <td><%= author %></td>
+                    <td><%= page %></td>
+                    <td>
+                        <button>
+                            <a href="/deleteData?id=<%= val.id %>">Delete</a>
+                        </button>
+    
+                        <button>
+                            <a href="/editData?id=<%= val.id %>">Edit</a>
+                        </button>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    
+    </form>
+</body>
+</html>

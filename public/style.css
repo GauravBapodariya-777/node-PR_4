@@ -1,0 +1,75 @@
+/* Apply styles to the tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Apply styles to form elements */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Apply styles to buttons */
+  button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Apply styles to links inside buttons */
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Apply styles to hidden inputs */
+  input[type="hidden"] {
+    display: none;
+  }
+  
+  /* Apply general styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Center form on the page */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  

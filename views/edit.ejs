@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/style.css">
+</head>
+
+<body>
+    <form method="post" action="/updateData">
+        <input type="hidden" name="editid" value="<%= single.id %>" />
+        <table border="1">
+            <tr>
+                <td>book_name :- </td>
+                <td><input type="text" value="<%= single.name %>" name="name"></td>
+            </tr>
+            <tr>
+                <td>book_price :- </td>
+                <td><input type="text" value="<%= single.price %>" name="price"></td>
+            </tr>
+            <tr>
+                <td>book_author :- </td>
+                <td><input type="text" value="<%= single.author %>" name="author"></td>
+            </tr>
+            <tr>
+                <td>book_pages</td>
+                <td>
+                    <select name="page">
+                        <option value="">----select page-----</option>
+                        <% let page=["0-100","100-200","200-300","300-400","400-500","500-600"]; page.map((val)=> {
+                            %>
+                            <option <% if(single.page==val) { %> selected <% } %> value="<%= val %>"><%= val %>
+                            </option>
+                            <% }) %>
+                    </select>
+                </td>
+            </tr>=
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table><br><br><br>
+    </form>
+</body>
+
+</html>
